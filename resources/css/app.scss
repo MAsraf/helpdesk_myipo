@@ -1,0 +1,135 @@
+@use 'media-queries' as *;
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .pause {
+        animation-play-state: paused;
+    }
+}
+
+.main-menu {
+    @apply transition-all relative z-40;
+    min-width: 250px;
+    width: 250px;
+    margin-left: 0;
+    transition-duration: 500ms;
+
+    @include lt-sm {
+        @apply fixed;
+    }
+
+    &.closed {
+        margin-left: -250px;
+    }
+
+    ul {
+        min-height: 350px;
+    }
+}
+
+#tickets,
+#ticket-details-tabs {
+    .menu {
+        .item {
+            @apply font-normal text-gray-500 pb-2 px-2 border-primary-700;
+            min-width: 150px;
+
+            &:hover {
+                @apply border-b;
+            }
+
+            &.active {
+                @apply border-b-2 font-bold;
+            }
+        }
+    }
+}
+
+table {
+    .min-w-table {
+        min-width: 200px;
+    }
+}
+
+.magnificpopup-container {
+    img {
+        &:hover {
+            @apply cursor-pointer;
+        }
+    }
+}
+
+.mfp-title {
+    @apply w-full;
+
+    text-align: center !important;
+}
+
+.updating-section {
+    button {
+        @apply hidden;
+    }
+
+    &:hover {
+        button {
+            @apply flex;
+        }
+    }
+}
+
+#chat {
+    height: 500px;
+
+    #chat-container {
+        img {
+            max-width: 50%;
+        }
+    }
+}
+
+.modal-container {
+    @apply w-full overflow-y-auto max-h-screen p-5;
+
+    max-height: calc(100vh - 200px);
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.479); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 8% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
