@@ -29,13 +29,13 @@
                                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
                                         <th scope="col" class="py-3 px-6">
+                                            @lang('Title')
+                                        </th>
+                                        <th scope="col" class="py-3 px-6">
                                             @lang('Type')
                                         </th>
                                         <th scope="col" class="py-3 px-6">
                                             @lang('Priority')
-                                        </th>
-                                        <th scope="col" class="py-3 px-6">
-                                            @lang('Title')
                                         </th>
                                         <th scope="col" class="py-3 px-6">
                                             @lang('Status')
@@ -188,24 +188,24 @@
                     </div>
                 </div>
             </div>
-            <div id="content4" style="display: none;">
+            <div id="content4">
                 <div class="w-full p-5">
                     <div class="w-full flex flex-col gap-5 p-5 rounded-lg border border-gray-100 shadow-lg bg-white">
-                        <span class="text-lg text-gray-500 font-medium">@lang('Not assigned tickets')</span>
+                        <span class="text-lg text-gray-500 font-medium">@lang('Unassigned tickets')</span>
                         <div class="w-full overflow-x-auto relative sm:rounded-lg">
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                <caption class="hidden">@lang('Not assigned tickets')</caption>
+                                <caption class="hidden">@lang('Unassigned tickets')</caption>
                                 <thead class="text-xs text-gray-700 uppercase
                                 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
+                                        <th scope="col" class="py-3 px-6">
+                                            @lang('Title')
+                                        </th>
                                         <th scope="col" class="py-3 px-6">
                                             @lang('Type')
                                         </th>
                                         <th scope="col" class="py-3 px-6">
                                             @lang('Priority')
-                                        </th>
-                                        <th scope="col" class="py-3 px-6">
-                                            @lang('Title')
                                         </th>
                                         <th scope="col" class="py-3 px-6">
                                             @lang('Status')

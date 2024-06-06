@@ -4,7 +4,7 @@
         <a style="display: block;color: black;padding: 16px;text-decoration: none;"><button id="button1">My assigned tickets</button></a>
         <a style="display: block;color: black;padding: 16px;text-decoration: none;"><button id="button2">Tickets by statuses</button></a>
         <a style="display: block;color: black;padding: 16px;text-decoration: none;"><button id="button3">Tickets assignments</button></a>
-        <a style ="display: block;color: black;padding: 16px;text-decoration: none;"><button id="button4">Not assigned tickets</button></a>
+        <a style ="display: block;color: black;padding: 16px;text-decoration: none;"><button id="button4">Unassigned tickets</button></a>
     </div>
     </div>
 

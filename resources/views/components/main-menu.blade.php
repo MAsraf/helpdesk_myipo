@@ -25,36 +25,27 @@
                     </path>
                 </svg>
             </button>
-            <button type="button"
-                    class="flex mr-3 text-sm bg-gray-800 rounded-full xl:mr-0 focus:ring-4
-                    focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button"
+            <!--<button type="button"
+                    class="flex text-sm"
+                    id="user-menu-button"
                     aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom"
-            >
+            >-->
                 <span class="sr-only">Open user menu</span>
-                <x-user-avatar :user="auth()->user()" />
-            </button>
+                <x-user-avatar :user="auth()->user()" /><!--avatar menu-->
+            <!--</button>-->
+            <div class="text-xs">
+            <span class="text-md text-gray-500 font-medium">{{ auth()->user()->name }}</span><br>
+            <span class="text-md text-gray-500 font-light">{{ auth()->user()->email }}</span><br>
+            <!--<span class="text-xs text-gray-400 font-light">Account created: {{ auth()->user()->created_at->diffForHumans() }}</span><br>-->
+            <!--<span class="text-xs text-gray-400 font-light">Last update: {{ auth()->user()->updated_at->diffForHumans() }}</span><br>-->
+            <span class="text-xs text-red-700 font-medium"><a href="{{ route('auth.logout') }}">
+                            @lang('Sign out')
+                        </a></span></div>
             <div
                 class="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100
                 shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown"
             >
-                <div class="py-3 px-4">
-                    <span class="block text-sm text-gray-900 dark:text-white">{{ auth()->user()->name }}</span>
-                    <span
-                        class="block text-sm font-medium text-gray-500
-                        truncate dark:text-gray-400">
-                        {{ auth()->user()->email }}
-                    </span>
-                </div>
-                <ul class="py-1" aria-labelledby="user-menu-button">
-                    <li>
-                        <a
-                            href="{{ route('my-profile') }}"
-                            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600
-                            dark:text-gray-200 dark:hover:text-white"
-                        >
-                            @lang('My profile')
-                        </a>
-                    </li>
+                <!--<ul class="py-1" aria-labelledby="user-menu-button">
                     <li>
                         <a
                             href="{{ route('auth.logout') }}"
@@ -64,7 +55,7 @@
                             @lang('Sign out')
                         </a>
                     </li>
-                </ul>
+                </ul>-->
             </div>
         </div>
         <div class="hidden justify-between items-center w-full xl:flex xl:w-auto xl:order-1" id="navbar-sticky">

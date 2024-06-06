@@ -63,9 +63,9 @@ return [
             'title' => 'Dashboard',
             'route' => 'home',
             'icon' => 'fa-table-columns',
-            'always_shown' => true,
+            'always_shown' => false,
             'show_notification_indicator' => false,
-            'permissions' => ['']
+            'permissions' => ['Manage ticket statuses']
         ],
         [
             'title' => 'Manage notice banners',

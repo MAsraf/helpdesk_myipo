@@ -65,9 +65,9 @@ class TicketsDialog extends Component implements HasForms
 
                     Select::make('priority')
                         ->label(__('Priority'))
-                        ->required()
                         ->searchable()
-                        ->options(priorities_list()),
+                        ->options(priorities_list())
+                        ->disabled(fn()=>auth()->user()->cannot('Manage ticket statuses')),
 
                     Select::make('category')
                         ->label(__('Category'))
@@ -103,16 +103,27 @@ class TicketsDialog extends Component implements HasForms
     public function save(): void
     {
         $data = $this->form->getState();
+        if(auth()->user()->cannot('Manage ticket statuses')){
         $ticket = Ticket::create([
             'title' => $data['title'],
             'content' => $data['content'],
             'owner_id' => auth()->user()->id,
-            'priority' => $data['priority'],
+            'priority' => '',
             'type' => $data['type'],
             'category' => $data['category'],
             'subcategory' => $data['subcategory'],
             'status' => default_ticket_status()
-        ]);
+        ]);}else{
+            $ticket = Ticket::create([
+                'title' => $data['title'],
+                'content' => $data['content'],
+                'owner_id' => auth()->user()->id,
+                'priority' => $data['priority'],
+                'type' => $data['type'],
+                'category' => $data['category'],
+                'subcategory' => $data['subcategory'],
+                'status' => default_ticket_status()
+            ]);}
         Notification::make()
             ->success()
             ->title(__('Ticket created'))

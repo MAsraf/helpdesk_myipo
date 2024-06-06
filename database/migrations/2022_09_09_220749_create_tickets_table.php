@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->longText('content');
             $table->string('status');
-            $table->string('priority');
+            $table->string('priority')->nullable();
             $table->foreignId('owner_id')->constrained('users');
             $table->foreignId('responsible_id')->nullable()->constrained('users');
             $table->softDeletes();
